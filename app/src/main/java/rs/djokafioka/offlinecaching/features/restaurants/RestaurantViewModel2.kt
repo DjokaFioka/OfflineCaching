@@ -13,6 +13,10 @@ import rs.djokafioka.offlinecaching.data.RestaurantRepository2
 /**
  * Created by Djordje on 9.9.2022..
  */
+//Ako se ne koristi DI i Network Bound Resource onda
+// u ViewModelu moramo da instanciramo sve sami
+// i ViewModel nasledjuje AndroidViewModel jer mu treba context
+// da bi dobio instancu baze
 class RestaurantViewModel2(application: Application) : AndroidViewModel(application) {
     private val readAllData: LiveData<List<Restaurant>>
     private val repository: RestaurantRepository2
